@@ -1,0 +1,163 @@
+main{
+    position: relative;
+    padding-top: 125px;
+    width:100%;
+    position: relative;
+    z-index: 0;
+}
+#tupian{
+    position: relative;
+    margin-top:1%;
+}
+#tupian::after{
+    display: block;
+    content: "";
+    clear: both;
+}
+#p-box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+#p10{
+    font-size:46px;
+}
+#p11{
+    font-size:8px;
+    color:#6c7279;
+}
+#p12{
+    font-size:8px;
+    color:#6c7279;
+}
+#img-shadow{
+    width:100%;
+    height:25%;
+    margin:1%;
+    float: left;
+}
+#img-shadow img{
+    width: 100%;
+    height: 100%;
+}
+#img-shadow #shadow{
+    display: none;
+}
+@media only screen and (min-width:40em){
+#p12{
+    /* margin-left:43%; */
+}
+#img-shadow{
+    position: relative;
+    width:47.5%;
+    margin:1%;
+}
+#img-shadow #shadow{
+    display: none;
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.4);
+    z-index: 9999;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    line-height: 100%;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 隐藏图片框 */
+#hideBox{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.4);
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    display: none;
+}
+#hideBox #mainImg{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 3px #fff solid;
+    border-radius: 20px;
+}
+#hideBox #mainImg #exit{
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: #f00;
+}
+#hideBox .img1{
+    background-image: url(../Images/portfolio/01-1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#hideBox .img2{
+    background-image: url(../Images/portfolio/02-1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#hideBox .img3{
+    background-image: url(../Images/portfolio/03-1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#hideBox .img4{
+    background-image: url(../Images/portfolio/04-1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#hideBox .img5{
+    background-image: url(../Images/portfolio/05-1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#hideBox .img6{
+    background-image: url(../Images/portfolio/06-1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#hideBox .img7{
+    background-image: url(../Images/portfolio/07-1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#hideBox .img8{
+    background-image: url(../Images/portfolio/08-1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+    
+}   
+@media only screen and (min-width:70em){
+#tupian{
+    margin-top:1%;
+}
+#p10{
+    font-size:46px;
+}
+#p11{
+    font-size:8px;
+    color:#6c7279;
+}
+#p12{
+    font-size:8px;
+    color:#6c7279;
+}
+#img-shadow{
+    width:24%;
+    height:25%;
+    margin:0.5%;
+}
+}

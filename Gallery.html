@@ -1,0 +1,250 @@
+<!-- Toup概念网页模板 -->
+<!-- 作者：yhf -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>画廊</title>
+	<link rel="stylesheet" href="css/Gallery.css">
+    <link rel="stylesheet" href="css/Big_screen.css">
+    <link rel="stylesheet" href="css/Middle_screen.css">
+    <link rel="stylesheet" href="css/Small_screen.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/jQuery.js"></script>
+</head>
+<body id="myBody">
+    <header>
+        <div id="logo" ><img src="Images/Logo/Logo.png" alt=""></div>
+        <nav id="Big-nav">
+            <ul>
+                    <a href="index.html"><li>主页</li></a>
+                    <a href="Services.html"><li>服务</li></a>
+                    <a href="About.html"><li>关于</li></a>
+                    <a href="Gallery.html"><li>画廊</li></a>
+                    <a href="founder.html"><li>团队</li></a>
+                    <a href="Contact Us.html"><li>联系我们</li></a>
+            </ul>
+        </nav>
+        <div id="Middle-nav">
+            <div id="nav-btn">
+            </div>
+        <div id="nav-list">
+            <ul>
+                    <a href="index.html"><li>主页</li></a>
+                    <a href="Services.html"><li>服务</li></a>
+                    <a href="About.html"><li>关于</li></a>
+                    <a href="Gallery.html"><li>画廊</li></a>
+                    <a href="founder.html"><li>团队</li></a>
+                    <a href="Contact Us.html"><li>联系我们</li></a>
+            </ul>
+        </div>
+        </div>
+        <canvas id="nav-canvas"></canvas>  
+    </header>
+        <!-- 编辑区域 -->
+        <main>
+        <div id="main">
+			<div id="p-box">
+					<p id="p10">画廊</p>
+					<p id="p11">公司的内部环境关系到员工和产品的质量，也能从侧面反映出公司的大小</p>
+					<p id="p12">让我们来看看Toup的办公室吧</p>
+			</div>
+        <div id="tupian">
+            <div id="img-shadow" class="img-shadow1 animated flipInX"><img src="Images/portfolio/01.jpg" id="img10">
+            <div id="shadow" class="shadow10">大厅</div>
+            </div>
+            <div id="img-shadow" class="img-shadow2 animated flipInX"><img src="Images/portfolio/02.jpg" id="img11">
+            <div id="shadow" class="shadow11">概念展示厅</div>
+            </div>
+            <div id="img-shadow" class="img-shadow3 animated flipInX"><img src="Images/portfolio/03.jpg" id="img12">
+            <div id="shadow" class="shadow12">办公室</div>
+            </div>
+            <div id="img-shadow" class="img-shadow4 animated flipInX"><img src="Images/portfolio/04.jpg" id="img13">
+            <div id="shadow" class="shadow13">会议室</div>
+            </div>
+            <div id="img-shadow" class="img-shadow5 animated flipInX"><img src="Images/portfolio/05.jpg" id="img14">
+            <div id="shadow" class="shadow14">休息区</div>
+            </div>
+            <div id="img-shadow" class="img-shadow6 animated flipInX"><img src="Images/portfolio/06.jpg" id="img15">
+            <div id="shadow" class="shadow15">广告位</div>
+            </div>
+            <div id="img-shadow" class="img-shadow7 animated flipInX"><img src="Images/portfolio/07.jpg" id="img16">
+            <div id="shadow" class="shadow16">展示区</div>
+            </div>
+            <div id="img-shadow" class="img-shadow8 animated flipInX"><img src="Images/portfolio/08.jpg" id="img17">
+            <div id="shadow" class="shadow17">会客室</div>
+            </div>
+        </div>
+         </div>   
+        </main>
+        <div id="hideBox">
+            <div id="mainImg" class="">
+                <div id="exit"></div>
+            </div>
+        </div>
+        <!-- 编辑区域 -->
+    <footer>
+		<div id="footer-p">
+        <p>版权所有朱文浩.保留所有权利。</p>
+		<p>Toupzwh@qq.cn</p>
+		</div>
+    </footer>
+</body>
+
+<!-- js -->
+<!-- 导航栏下拉框 -->
+<script>
+    $(document).ready(function(){
+        $("#nav-btn").click(function(){
+            $("#nav-list").slideToggle("show");
+        });
+    });
+</script>
+<!--canvas背景-->
+<script src="js/nav-canvas.js"></script>
+
+<!-- body撑满 -->
+<script> 
+    function maxBody(){
+        var thewindow = window.innerHeight;
+        var mybody = document.getElementById('myBody');
+        mybody.style.minHeight = thewindow+"px";
+        setTimeout(maxBody, 10);
+    } 
+    maxBody();
+</script>
+
+<!-- 隐藏图片框 -->
+<script>
+    //图片框高度宽度比例
+    function heigAanWid(){
+        var theWindowWidth = window.innerWidth;
+        var theMainImg = document.getElementById("mainImg");
+        theMainImg.style.width = (theWindowWidth*0.8) + "px";
+        var theImgWidth = (theMainImg.style.width).substring(0,(theMainImg.style.width).length-2);
+        //console.log(theImgWidth);
+        theMainImg.style.height = (theImgWidth*0.6) + "px";
+        var theImgHeight = (theMainImg.style.height).substring(0,(theMainImg.style.height).length-2);
+        //居中
+        theMainImg.style.marginTop = -(theImgHeight*0.5) + "px";
+        theMainImg.style.marginLeft = -(theImgWidth*0.5) + "px";
+        setTimeout(heigAanWid, 10);
+    }
+    heigAanWid();
+
+    //点击事件
+    //初始化关闭
+    $("document").ready(function(){
+        $("#hideBox").hide();
+        $("#hide-img10,hide-img11,hide-img12,hide-img13,hide-img14,hide-img15,hide-img16,hide-img17").hide();
+    });
+    //关闭
+    $("document").ready(function(){
+        $("#exit").click(function(){
+            $("#hideBox").hide(100);
+            $("#hide-img10,hide-img11,hide-img12,hide-img13,hide-img14,hide-img15,hide-img16,hide-img17").hide(100);
+        });
+    });
+
+    //出现
+    //出现并判断出现哪张图片
+    $("document").ready(function(){
+        $(".shadow10").click(function()
+        {
+            $("#hideBox").show(100);
+            $("#mainImg").removeClass();
+            $("#mainImg").addClass("img1");
+        });
+        $(".shadow11").click(function()
+        {
+            $("#hideBox").show(100);
+            $("#mainImg").removeClass();
+            $("#mainImg").addClass("img2");
+        });
+        $(".shadow12").click(function()
+        {
+            $("#hideBox").show(100);
+            $("#mainImg").removeClass();
+            $("#mainImg").addClass("img3");
+        });
+        $(".shadow13").click(function()
+        {
+            $("#hideBox").show(100);
+            $("#mainImg").removeClass();
+            $("#mainImg").addClass("img4");
+        });
+        $(".shadow14").click(function()
+        {
+            $("#hideBox").show(100);
+            $("#mainImg").removeClass();
+            $("#mainImg").addClass("img5");
+        });
+        $(".shadow15").click(function()
+        {
+            $("#hideBox").show(100);
+            $("#mainImg").removeClass();
+            $("#mainImg").addClass("img6");
+        });
+        $(".shadow16").click(function()
+        {
+            $("#hideBox").show(100);
+            $("#mainImg").removeClass();
+            $("#mainImg").addClass("img7");
+        });
+        $(".shadow17").click(function()
+        {
+            $("#hideBox").show(100);
+            $("#mainImg").removeClass();
+            $("#mainImg").addClass("img8");
+        });
+    });
+</script>
+
+<!-- 图片shadow -->
+<script>
+    $("document").ready(function(){
+        $(".img-shadow1").hover(function(){
+            $(".shadow10").show(100);
+        },function(){
+            $(".shadow10").hide(100);
+        });
+        $(".img-shadow2").hover(function(){
+            $(".shadow11").show(100);
+        },function(){
+            $(".shadow11").hide(100);
+        });
+        $(".img-shadow3").hover(function(){
+            $(".shadow12").show(100);
+        },function(){
+            $(".shadow12").hide(100);
+        });
+        $(".img-shadow4").hover(function(){
+            $(".shadow13").show(100);
+        },function(){
+            $(".shadow13").hide(100);
+        });
+        $(".img-shadow5").hover(function(){
+            $(".shadow14").show(100);
+        },function(){
+            $(".shadow14").hide(100);
+        });
+        $(".img-shadow6").hover(function(){
+            $(".shadow15").show(100);
+        },function(){
+            $(".shadow15").hide(100);
+        });
+        $(".img-shadow7").hover(function(){
+            $(".shadow16").show(100);
+        },function(){
+            $(".shadow16").hide(100);
+        });
+        $(".img-shadow8").hover(function(){
+            $(".shadow17").show(100);
+        },function(){
+            $(".shadow17").hide(100);
+        });
+    });
+</script>
+</html>
